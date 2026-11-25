@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* cool paper + navy ink, derived from the MG cube's blues */
+  --background: #f4f6f9;
+  --paper: #ffffff;
+  --paper-2: #e8edf3;
+  --foreground: #0b1220;
+  --ink: #0a1120;          /* dark panels */
+  --ink-2: #131d31;
+  --on-ink-muted: #9aa6b8;
+  --card: #f6f8fb;
+  --card-2: #f7f9fb;
+  --surface-in: #edf1f6;
+  --muted-foreground: #5b6475;
+  --accent: #1574d4;
+  --accent-strong: #1268c4;
+  --ice: #7fcbe8;
+  --border: #dfe5ec;
+  --ok: #22a45d;
+  --danger: #dc2626;
+  --header-h: 4.5rem;
+  --logo: "Montserrat", ui-sans-serif, system-ui, sans-serif;
+  --display: "Barlow Condensed", "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --serif: "Instrument Serif", Georgia, "Times New Roman", serif;
+  --body: "Inter Tight", ui-sans-serif, system-ui, sans-serif;
+  --ease: cubic-bezier(.2,.8,.2,1);
+  --ease-out-back: cubic-bezier(.34,1.45,.64,1); /* small overshoot for hovers */
+  --ease-expo: cubic-bezier(.87,0,.13,1);
+  /* brand colours, sampled from public/assets/logo (MG cube + wordmark) */
+  --logo-deep: #1268c4;   /* darker shade of the M face, for hovers/gradient starts */
+  --logo-blue: #1574d4;   /* M face (top); primary buttons, 4.7:1 with white text */
+  --logo-bright: #1887e5; /* M face (bottom) */
+  --logo-mid: #46b5d8;    /* cube top edge (teal) */
+  --logo-ice: #7fcbe8;
+  --logo-light: #9fdcf0;  /* G face */
+  --brand-code: #127ccc;  /* "CODE" in the wordmark */
+  --brand-growth: #2272bc;/* "GROWTH" in the wordmark */
+  /* radius of the big black panels */
+  --panel-r: clamp(1.75rem, 3.2vw, 3rem);
+  color-scheme: light;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { overflow-x: clip; scroll-behavior: smooth; scroll-padding-top: calc(var(--header-h) + 1rem + env(safe-area-inset-top, 0px)); background: var(--background); }
+body { font-family: var(--body); background: var(--background); color: var(--foreground); line-height: 1.55; -webkit-font-smoothing: antialiased; overflow-x: hidden; overflow-x: clip; }
+h1, h2, h3 { font-family: var(--display); font-weight: 700; letter-spacing: -0.01em; text-wrap: balance; }
+/* serif accent words inside headings (written as *word* in SplitText) */
+.acc { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spacing: 0; }
+p { text-wrap: pretty; }
+a { color: inherit; text-decoration: none; }
+a, button, summary, [role="button"] { touch-action: manipulation; -webkit-tap-highlight-color: transparent; }
+img { max-width: 100%; display: block; }
+button { font: inherit; }
+::selection { background: var(--accent); color: #fff; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* Lenis smooth scroll */
+html.lenis, html.lenis body { height: auto; scroll-behavior: auto; }
+.lenis.lenis-smooth { scroll-behavior: auto !important; }
+.lenis.lenis-stopped { overflow: hidden; }

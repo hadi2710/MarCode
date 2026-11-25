@@ -34,5 +34,3 @@ The static site is generated in `dist/`. It uses client-side routing (`/services
 - `src/data/site.ts`: all copy (services, founders, FAQs, stats), plus the Calendly URL and email
 
 See `TODO.md` for open items (images, company LinkedIn link).
-# MarCode
-# MarCode
